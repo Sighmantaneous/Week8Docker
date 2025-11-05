@@ -13,10 +13,19 @@ public class PersonService {
     }
 
     public Person create(Person p) {
+
         return repo.save(p);
     }
 
     public List<Person> findAll() {
+
         return repo.findAll();
     }
+
+    public Person findByEmployeeId(String id) {
+        return repo.findByEmployeeId(id)
+                .orElseThrow(() -> new IllegalArgumentException("Person not found"));
+    }
+
 }
+
