@@ -1,4 +1,4 @@
-FROM eclipse-mosquitto  AS runtime
+FROM eclipse-temurin:21 AS runtime
 WORKDIR /app
 
 COPY target/*.jar app.jar
